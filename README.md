@@ -28,7 +28,7 @@ reaper_scripts/lua/melody_generator/
 
 2. Ensure the folder structure remains intact:  
      melody_generator/
-        main.lua
+        melody_generator.lua
         melody/
             melody.lua
         reaper_integration/
@@ -37,7 +37,7 @@ reaper_scripts/lua/melody_generator/
             run_ui.lua
    
 3. Open REAPER and go to Actions → Show Action List → ReaScript → Load.
-Select main.lua from the melody_generator folder.
+Select melody_generator.lua from the melody_generator folder.
 
 4. Run the script from the Action List. A small ReaImGui window will appear allowing you to select a root note, choose a scale, and generate a melody.
 
@@ -49,9 +49,13 @@ Select main.lua from the melody_generator folder.
   4. Click Generate Melody to insert a new track with the MIDI notes.
 
 ## Project Structure
-  melody/	                 Functions for melody data and generation logic
-  reaper_integration/	     Functions for interacting with REAPER (track creation, MIDI insertion)
-  ui/	                     ReaImGui user interface components
-  main.lua	               Entry point script that runs the UI loop
+  melody/	                
+  Functions for melody data and generation logic
+  reaper_integration/	    
+  Functions for interacting with REAPER (track creation, MIDI insertion)
+  ui/ -                    
+  ReaImGui user interface components
+  melody_generator.lua -               
+  Entry point script that runs the UI loop
   
 
