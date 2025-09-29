@@ -1,6 +1,3 @@
-
-
-
 local M = {}
 
 -- Map note names to MIDI numbers for octave 4
