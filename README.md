@@ -29,10 +29,8 @@ reaper_scripts/lua/melody_generator/
 2. Ensure the folder structure remains intact:  
      melody_generator/
         melody_generator.lua
-        melody/
-            melody.lua
         reaper_integration/
-            create_track.lua
+            reaper_integration.lua
         ui/
             run_ui.lua
    
