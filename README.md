@@ -48,11 +48,4 @@ Select melody_generator.lua from the melody_generator folder.
   3. Select a Scale (future versions may include this feature).
   4. Click Generate Melody to insert a new track with the MIDI notes.
 
-## Project Structure
-  melody / ->  Functions for melody data and generation logic
-  reaper_integration / -> Functions for interacting with REAPER (track creation, MIDI insertion)    
-  ui/ -> ReaImGui user interface components             
-  melody_generator.lua -> Entry point script that runs the UI loop
-  
-  
 
