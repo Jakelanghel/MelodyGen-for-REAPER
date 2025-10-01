@@ -32,6 +32,11 @@ M.scale_map = {
 M.note_length_index = 1
 M.note_length_map = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
 
+-- Beats Per Measure
+M.beats_per_measure_index = 1
+M.beats_per_measure_names = {"4/4", "3/4", "6/8", "5/4", "7/8", "2/4"}
+M.beats_per_measure_map = {4, 3, 6, 5, 7, 2}
+
 --------------------------------------
 -- DEBUG -----------------------------
 --------------------------------------
@@ -80,7 +85,7 @@ end
 
 
 function M.run_ui(ctx, create_track)
-reaper.ImGui_SetNextWindowSize(ctx, 425, 230, reaper.ImGui_Cond_Always())
+reaper.ImGui_SetNextWindowSize(ctx, 425, 270, reaper.ImGui_Cond_Always())
     local visible, open = reaper.ImGui_Begin(ctx, "Melody Generator", true)
 
     if visible then
@@ -98,6 +103,10 @@ reaper.ImGui_SetNextWindowSize(ctx, 425, 230, reaper.ImGui_Cond_Always())
         -- Note Length
         M.note_length_index = draw_dropdown(ctx, "Number of notes", M.note_length_map, M.note_length_index)
         reaper.ImGui_Dummy(ctx, 0, 8)   -- 5px padding
+        M.beats_per_measure_index = draw_dropdown(ctx, "Beats Per Measure", M.beats_per_measure_map, M.beats_per_measure_index)
+        reaper.ImGui_Dummy(ctx, 0, 8)   -- 5px padding
+
+
 
 
 
@@ -108,6 +117,7 @@ reaper.ImGui_SetNextWindowSize(ctx, 425, 230, reaper.ImGui_Cond_Always())
             local octave = M.octave_map[M.octave_index]
             local scale_notes = M.scale_map[M.scale_index]
             local note_length = M.note_length_map[M.note_length_index]
+            local beats_per_measure = M.beats_per_measure_map[M.beats_per_measure_index]
             create_track(note_name, octave, scale_notes, note_length)
         end
 
